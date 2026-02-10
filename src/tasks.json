@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Learn Python",
+        "completed": true
+    },
+    {
+        "id": 2,
+        "name": "Build TODO app",
+        "completed": false
+    },
+    {
+        "id": 3,
+        "name": "Test with date",
+        "completed": false,
+        "created_at": "2026-02-10 17:10"
+    }
+]

@@ -16,6 +16,7 @@ A professional command-line task management application built with Python.
 
 ## How to Run
 ```bash
+cd src
 python todo_manager.py
 ```
 
