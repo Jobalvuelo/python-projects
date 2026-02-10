@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TODO List Manager
 
 A professional command-line task management application built with Python.
@@ -53,3 +54,7 @@ todo-manager/
 ## Date
 
 Created: February 2026
+=======
+# python-projects
+Python learning projects - Command-line applications
+>>>>>>> 85f56dbbc8df9ecb1f3d286b0000bfb16658556a
