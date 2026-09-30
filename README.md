@@ -1,61 +1,85 @@
-<<<<<<< HEAD
-# TODO List Manager
+# Taghazout Garden House
 
-A professional command-line task management application built with Python.
+A warm, editorial website and booking-ready Cloudflare Worker for the Garden House experience in Taghazout.
 
-## Features
+## What is included
 
-- ✅ **Add tasks** - Create new tasks with automatic timestamps
-- 📋 **View all tasks** - See all your tasks with status and creation date
-- ✓ **Complete tasks** - Mark tasks as done
-- ✏️ **Edit tasks** - Update task names
-- 🗑️ **Delete tasks** - Remove unwanted tasks
-- 📊 **Statistics** - View progress (total, completed, pending, percentage)
-- 🔍 **Search** - Find tasks by keyword
-- 💾 **Data persistence** - All data saved in JSON format
+- The complete **3 vibes × 3 durations** experience builder
+- Large, clearly labelled placeholders for original Garden House photography
+- Responsive Moroccan/Berber-inspired visual system
+- Booking form prepared for Stripe Checkout
+- Cloudflare Worker API with server-side Stripe communication
+- D1 booking schema and Stripe webhook handling
+- No stock or AI-generated photography
 
-## How to Run
+## Architecture
+
+```text
+Browser → Cloudflare Worker → D1
+                 │
+                 └→ Stripe Checkout
+                         │
+                         └→ signed webhook → D1 booking status
+```
+
+Stripe secret keys are used only inside the Worker. They must never be added to the frontend or committed to Git.
+
+## Local preview
+
+For a frontend-only preview:
+
 ```bash
-cd src
-python todo_manager.py
+python -m http.server 8000 --directory public
 ```
 
-## Menu Options
+For the complete Worker and a local D1 database:
 
-1. Add task
-2. Show all tasks
-3. Complete task
-4. Edit task
-5. Delete task
-6. Statistics
-7. Search tasks
-8. Exit
-
-## Technologies
-
-- Python 3
-- JSON for data storage
-- datetime for timestamps
-
-## Project Structure
-```
-todo-manager/
-├── todo_manager.py    # Main application
-├── tasks.json         # Data storage (auto-generated)
-└── README.md          # Documentation
+```bash
+npm install
+npm run db:local
+npm run dev
 ```
 
-## Author
+The booking form intentionally shows a helpful setup message until Stripe prices and secrets are configured.
 
-**Ayoub Hamouiat**
-- Location: Switzerland
-- Learning: Python Development
-- Goal: Junior Developer Position
+## Cloudflare setup
 
-## Date
+1. Install dependencies with `npm install`.
+2. Authenticate using `npx wrangler login`.
+3. Create the database: `npx wrangler d1 create taghazout-garden-house`.
+4. Copy the returned database ID into `wrangler.jsonc`.
+5. Apply the schema with `npm run db:remote`.
+6. Replace `PUBLIC_SITE_URL` in `wrangler.jsonc` with the production domain.
+7. Add secrets (never put their values in this repository):
 
-Created: February 2026
-=======
-# python-projects
-Python learning projects - Command-line applications
->>>>>>> 85f56dbbc8df9ecb1f3d286b0000bfb16658556a
+```bash
+npx wrangler secret put STRIPE_SECRET_KEY
+npx wrangler secret put STRIPE_WEBHOOK_SECRET
+```
+
+8. Create nine Stripe Prices, then add their IDs as Worker secrets:
+
+```text
+STRIPE_PRICE_GARDEN_3    STRIPE_PRICE_GARDEN_5    STRIPE_PRICE_GARDEN_7
+STRIPE_PRICE_SURF_3      STRIPE_PRICE_SURF_5      STRIPE_PRICE_SURF_7
+STRIPE_PRICE_RESET_3     STRIPE_PRICE_RESET_5     STRIPE_PRICE_RESET_7
+```
+
+Use `npx wrangler secret put <NAME>` for each value. Configure the Stripe webhook endpoint as:
+
+```text
+https://YOUR_DOMAIN/api/stripe/webhook
+```
+
+Subscribe it to `checkout.session.completed`, `checkout.session.async_payment_succeeded`, and `checkout.session.async_payment_failed`.
+
+## Add the real photography
+
+Place original photos under `public/images/`. Replace each `.photo-placeholder` element in `public/index.html` with an `<img>` using the same container class. The layouts already support landscape, portrait, full-width and asymmetrical formats.
+
+## Safety notes
+
+- Checkout sessions are created server-side.
+- Webhook signatures are checked before a booking can become `paid`.
+- Package/price selection is allowlisted server-side; the browser cannot submit arbitrary Stripe Price IDs.
+- D1 stores booking details and Stripe references, but no card data.

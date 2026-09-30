@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Taghazout Garden House — choose your rhythm, stay close to nature, and experience Morocco at your own pace.">
+  <title>Taghazout Garden House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#top" aria-label="Taghazout Garden House home"><span class="logo-mark">✦</span><span>Taghazout<br><b>Garden House</b></span></a>
+    <nav id="nav" aria-label="Main navigation"><a href="#experiences">Experiences</a><a href="#make-it-yours">Make it yours</a><a href="#story">The house</a><a href="#contact">Contact</a></nav>
+    <button class="pill open-booking">Plan your stay <span>↗</span></button>
+    <button class="menu" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+  </header>
+
+  <main id="top">
+    <div class="booking-banner" id="booking-banner" hidden role="status"><span></span><button aria-label="Close message">×</button></div>
+    <section class="hero">
+      <div class="photo-placeholder hero-photo" role="img" aria-label="Placeholder for the Garden House hero photograph"><span>[ GARDEN HOUSE HERO PHOTO ]</span><small>Full-width · landscape</small></div>
+      <div class="hero-wash"></div>
+      <div class="hero-copy"><p class="kicker light">Taghazout · Morocco</p><h1>Come as you are.<br><em>Stay for the feeling.</em></h1><p>A garden retreat for ocean days, shared tables, creative moments and space to breathe.</p><a class="button light-button" href="#experiences">Find your experience <span>↓</span></a></div>
+      <p class="hero-note">Slow living · Warm welcomes · Atlantic days</p>
+    </section>
+
+    <section class="manifesto section" id="story">
+      <div class="symbol">ⵣ</div>
+      <div><p class="kicker">A home with a rhythm of its own</p><h2>More than a place<br><em>to sleep.</em></h2></div>
+      <div class="body-copy"><p>Taghazout Garden House is a creative travellers' home rooted in the garden, Moroccan culture and the easy rhythm of the coast.</p><p>Eat together. Move your body. Make something. Find a wave—or do absolutely nothing.</p></div>
+    </section>
+
+    <section class="photo-story section-tight">
+      <div class="photo-placeholder portrait"><span>[ GARDEN PHOTO ]</span><small>Portrait · greenery & daily life</small></div>
+      <div class="photo-placeholder landscape"><span>[ COMMUNAL SPACE PHOTO ]</span><small>Landscape · people & atmosphere</small></div>
+      <div class="hand-note">A little wild.<br>A lot of heart. <b>↘</b></div>
+    </section>
+
+    <section class="experiences section" id="experiences">
+      <div class="section-title"><p class="kicker">Experience Garden House</p><h2>Choose your <em>vibe.</em></h2><p>How do you want to experience your time in Taghazout?</p></div>
+      <div class="vibe-grid" role="radiogroup" aria-label="Choose your experience">
+        <button class="vibe-card active" data-vibe="garden" role="radio" aria-checked="true"><span class="vibe-icon">🌿</span><small>01</small><h3>The Garden Escape</h3><b>Slow down · Explore · Connect</b><p>For nature, Moroccan culture, good food and space to breathe.</p><span class="explore">Choose this vibe <i>→</i></span></button>
+        <button class="vibe-card" data-vibe="surf" role="radio" aria-checked="false"><span class="vibe-icon">〰</span><small>02</small><h3>Surf & Garden</h3><b>Surf · Move · Explore</b><p>For ocean lovers who want waves without the rigid surf-camp schedule.</p><span class="explore">Choose this vibe <i>→</i></span></button>
+        <button class="vibe-card" data-vibe="reset" role="radio" aria-checked="false"><span class="vibe-icon">✦</span><small>03</small><h3>The Reset</h3><b>Slow down · Create · Reconnect</b><p>For movement, creativity, expression and real community.</p><span class="explore">Choose this vibe <i>→</i></span></button>
+      </div>
+
+      <div class="experience-builder" id="builder">
+        <div class="builder-top"><div><p class="step">Step 02</p><h3>How long do you<br>want to stay?</h3></div><div class="duration-tabs" role="radiogroup" aria-label="Choose your duration"><button data-days="3" role="radio" aria-checked="false"><strong>3</strong><span>Days<small>A little taste.</small></span></button><button class="active" data-days="5" role="radio" aria-checked="true"><strong>5</strong><span>Days<small>The full experience.</small></span></button><button data-days="7" role="radio" aria-checked="false"><strong>7</strong><span>Days<small>Take your time.</small></span></button></div></div>
+        <div class="package-result" aria-live="polite">
+          <div class="result-intro"><span id="result-icon">🌿</span><p class="kicker" id="result-label">Your 5-day experience</p><h2 id="result-title">The Garden Escape</h2><p id="result-description"></p><p class="weather-note" id="result-note" hidden></p></div>
+          <div class="included"><p class="step">What’s included</p><ul id="included-list"></ul><button class="button open-booking">Choose this experience <span>↗</span></button><small>No payment is taken until availability and prices are configured.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="full-photo"><div class="photo-placeholder" role="img" aria-label="Placeholder for an atmospheric Garden House photograph"><span>[ FULL-WIDTH ATMOSPHERE PHOTO ]</span><small>People · texture · a real moment</small></div></section>
+
+    <section class="itinerary section">
+      <div class="section-title"><p class="kicker">A taste of the rhythm</p><h2>Your five days,<br><em>never rushed.</em></h2></div>
+      <div class="days">
+        <article><span>Day 01</span><h3>Arrive & settle in</h3><p>Welcome tea → garden tour → sunset → Moroccan dinner</p></article>
+        <article><span>Day 02</span><h3>The ocean</h3><p>Breakfast → surf → lunch → free afternoon → sunset yoga</p></article>
+        <article><span>Day 03</span><h3>Moroccan living</h3><p>Garden morning → cooking experience → shared dinner</p></article>
+        <article><span>Day 04</span><h3>Explore</h3><p>Excursion → local food → sunset</p></article>
+        <article><span>Day 05</span><h3>Slow morning</h3><p>Breakfast → garden → last swim or surf → goodbye</p></article>
+      </div>
+      <p class="itinerary-note">Every stay follows the weather, the group and the natural rhythm of the house.</p>
+    </section>
+
+    <section class="make-yours section" id="make-it-yours">
+      <div class="section-title"><p class="kicker">Make your stay your own</p><h2>Go out. Make things.<br><em>Come together.</em></h2></div>
+      <div class="menus">
+        <div><p class="menu-label">Excursions</p><article><span>🌊</span><div><h3>Wild Beach</h3><p>A quieter beach day away from the main tourist spots.</p></div></article><article><span>🌴</span><div><h3>Paradise Valley</h3><p>Nature, water, mountains and a change of scenery.</p></div></article><article><span>△</span><div><h3>Panoramic Taghazout</h3><p>Cliffs, views and the landscape around the coast.</p></div></article><article><span>⌂</span><div><h3>Berber Village</h3><p>Local life and landscapes beyond the surf towns.</p></div></article></div>
+        <div><p class="menu-label">Garden House workshops</p><article><span>◌</span><div><h3>Slow Down</h3><p>Meditation · breathwork · mindful movement · journaling</p></div></article><article><span>✎</span><div><h3>Make Something</h3><p>Painting · collage · creative expression · upcycling</p></div></article><article><span>♫</span><div><h3>Sing for the Soul</h3><p>Voice exploration · group singing · songs around the fire</p></div></article><article><span>❋</span><div><h3>Garden to Table</h3><p>Herbs · plants · garden tour · Moroccan tea</p></div></article><article><span>♨</span><div><h3>Moroccan Kitchen</h3><p>Food preparation · cooking · traditional recipes</p></div></article></div>
+      </div>
+    </section>
+
+    <section class="photo-mosaic section-tight" aria-label="Photography placeholders"><div class="photo-placeholder"><span>[ FOOD PHOTO ]</span></div><div class="photo-placeholder tall"><span>[ WORKSHOP PHOTO ]</span></div><div class="photo-placeholder"><span>[ SURF PHOTO ]</span></div><div class="photo-placeholder wide"><span>[ EXCURSION PHOTO ]</span></div></section>
+
+    <section class="closing section" id="contact"><span class="sun">☼</span><p class="kicker">Not sure which experience is for you?</p><h2>Tell us what you’re<br>looking for.</h2><p>We’ll help you find your Garden House.</p><button class="button light-button open-booking">Start planning <span>↗</span></button></section>
+  </main>
+
+  <footer><a class="logo" href="#top"><span class="logo-mark">✦</span><span>Taghazout<br><b>Garden House</b></span></a><div><p>Taghazout · Morocco</p><p>Real contact details coming soon</p></div><div><a href="#experiences">Experiences</a><a href="#make-it-yours">Make it yours</a><button class="link-button open-booking">Plan your stay</button></div><p class="copyright">© <span id="year"></span> Taghazout Garden House</p></footer>
+
+  <dialog id="booking-dialog">
+    <button class="close-dialog" aria-label="Close">×</button>
+    <div class="booking-heading"><p class="kicker">Plan your stay</p><h2>Your Garden House<br><em>experience.</em></h2><p id="booking-choice"></p></div>
+    <form id="booking-form">
+      <input type="hidden" name="vibe"><input type="hidden" name="duration">
+      <label>Arrival<input type="date" name="arrival" required></label><label>Guests<select name="guests" required><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option></select></label>
+      <label>Full name<input name="name" autocomplete="name" required></label><label>Email<input type="email" name="email" autocomplete="email" required></label>
+      <label class="full">Anything you want us to know?<textarea name="message" rows="3" placeholder="Tell us what kind of stay you’re dreaming of…"></textarea></label>
+      <button class="button full" type="submit"><span class="submit-label">Continue to booking</span> <span>↗</span></button>
+      <p class="form-status full" role="status"></p>
+      <small class="full">Secure payment will open in Stripe Checkout once package prices are configured. Your payment details never pass through this website.</small>
+    </form>
+  </dialog>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
