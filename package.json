@@ -1,0 +1,15 @@
+{
+  "name": "taghazout-garden-house",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:local": "wrangler d1 execute taghazout-garden-house --local --file=schema.sql",
+    "db:remote": "wrangler d1 execute taghazout-garden-house --remote --file=schema.sql",
+    "check": "node --check public/script.js && node --check public/src/experiences.js && node --check worker/index.js",
+    "test": "node --test tests/catalog.test.js"
+  },
+  "devDependencies": { "wrangler": "^4.0.0" }
+}

@@ -137,6 +137,9 @@ celerybeat.pid
 # Environments
 .env
 .envrc
+.dev.vars
+.wrangler/
+node_modules/
 .venv
 env/
 venv/
